@@ -1,0 +1,12 @@
+<div style="text-align:center">
+	<h1>
+		Bienvenido a {{title}}!
+	</h1>
+</div>
+<div class="container">
+	<button (click)="ListarPersona()" class="btn btn-info">Listar Personas</button>
+	<button (click)="CrearPersona()" class="btn btn-info" style="margin-left: 10px;">Agregar Personas</button>
+</div>
+<br><br>
+<!-- Permite la comunicacion entre componente -->
+<router-outlet></router-outlet>

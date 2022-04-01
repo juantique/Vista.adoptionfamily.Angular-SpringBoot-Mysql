@@ -1,0 +1,64 @@
+<body>
+	<div class="container">
+		<div class="title">Formulario Crear Nueva Persona</div>
+		<form action="#">
+			<div class="user-details">
+
+				<div class="input-box">
+					<label class="details">Nombre Completo</label>
+					<input type="text" placeholder="Escriba el Nombre" name="nomcompleto" [(ngModel)]="persona.nomcompleto" required>
+				</div>
+
+				<div class="input-box">
+  					<label class="details">Email</label>
+	  				<input type="email" placeholder="Escriba su Email" pattern=".+@globex\.com" name="email" [(ngModel)]="persona.email" required>
+				</div>
+
+				<div class="input-box">
+					<label class="details">Nickname</label>
+					<input type="text" placeholder="Escriba su Usuario" name="usuario" [(ngModel)]="persona.usuario" required>
+				</div>
+
+				<div class="input-box">
+					<label class="details">Numero de Documento</label>
+					<input type="text" placeholder="Escriba su Documento" name="numdocu" [(ngModel)]="persona.numdocu" required>
+				</div>
+
+				<div class="input-box">
+					<label class="details">Fecha de Nacimiento</label>
+					<input type="date" value="2000-01-01" max="2022-12-31" name="fechanace" [(ngModel)]="persona.fechanace" required>
+				</div>
+
+				<div class="input-box">
+					<label class="details">¿Cuantos Años Tienes?</label>
+					<input type="text" placeholder="Ingrese la edad actual" name="edad" [(ngModel)]="persona.edad" required>
+				</div>
+
+                <div class="input-box">
+					<label class="details">Genero</label>
+					<select [(ngModel)]="selectedGenero.idGenero" name="idgenero" required>
+                        <option *ngFor="let genero of generos" value={{genero.idGenero}}>
+							{{genero.nombreGenero}}
+						</option>
+                    </select>
+				</div>
+
+                <div class="input-box">
+					<label class="details">Estado Civil</label>
+					<select [(ngModel)]="persona.estado" name="idestado" required>
+                        <option *ngFor="let estado of estados" value={{estado.idEstado}}>
+							{{estado.nombreEstado}}
+						</option>
+                    </select>
+				</div>
+
+		    </div>
+        <div class="button">
+			<button (click)="create()" class="btn btn-info">Guardar</button>
+        </div>
+        <div class="button">
+            <input type="submit" value="Cancelar">
+        </div>
+		</form>
+	</div>
+</body>

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Lista de Personas Incritas Para Adopcion</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <th>No. Resgitro</th>
+                    <th>Nombre Completo</th>
+                    <th>Email</th>
+                    <th>Nickname</th>
+                    <th>No. Documento</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Edad</th>
+                    <th>Genero</th>
+                    <th>Estado Civil</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let persona of personas" class="text-center">
+                        <td>{{persona.idpersona}}</td>
+                        <td>{{persona.nomcompleto}}</td>
+                        <td>{{persona.email}}</td>
+                        <td>{{persona.usuario}}</td>
+                        <td>{{persona.numdocu}}</td>
+                        <td>{{persona.fechanace}}</td>
+                        <td>{{persona.edad}}</td>
+                        <td>{{persona.genero.nombreGenero}}</td>
+                        <td>{{persona.estado.nombreEstado}}</td>
+                        <td>
+                            <button class="btn btn-warning">Editar</button>
+                            <button class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
